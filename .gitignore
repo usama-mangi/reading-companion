@@ -31,7 +31,6 @@ yarn-error.*
 *.pem
 
 # local env files
-.env
 .env*.local
 
 # vscode
@@ -46,3 +45,4 @@ appwrite.config.json
 # generated native folders
 /ios
 /android
+config.bat

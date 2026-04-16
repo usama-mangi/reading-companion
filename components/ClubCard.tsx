@@ -1,6 +1,6 @@
 import { IClub } from "@/types";
 import { router } from "expo-router";
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 export default function ClubCard({ item }: { item: IClub }) {
   const handlePress = () => {
@@ -11,14 +11,25 @@ export default function ClubCard({ item }: { item: IClub }) {
   };
 
   return (
-    <TouchableOpacity
-      onPress={handlePress}
-      className="bg-white p-4 mb-4 rounded-lg shadow-md active:bg-gray-100"
-    >
-      <Text className="text-lg font-bold">{item.clubName}</Text>
-      <Text className="text-sm text-gray-500 mt-1">
-        Invite Code: {item.inviteCode}
-      </Text>
+    <TouchableOpacity onPress={handlePress} activeOpacity={0.7}>
+      <View className="card mb-4">
+        <View className="flex-row justify-between items-center">
+          <View className="flex-1">
+            <Text className="card-title mb-1">{item.clubName}</Text>
+            <View className="flex-row items-center">
+              <Text className="text-sm text-gray-500">Invite Code: </Text>
+              <View className="bg-indigo-100 px-2 py-0.5 rounded ml-1">
+                <Text className="text-indigo-600 font-bold text-sm">
+                  {item.inviteCode}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View className="bg-gradient-to-r from-blue-500 to-indigo-600 w-10 h-10 rounded-full items-center justify-center">
+            <Text className="text-white text-xl">→</Text>
+          </View>
+        </View>
+      </View>
     </TouchableOpacity>
   );
 }

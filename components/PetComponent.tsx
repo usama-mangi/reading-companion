@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { View, Text, Image, StyleSheet, ActivityIndicator } from "react-native";
+import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 import { useAuthStore } from "@/store/authStore";
 import {
   DATABASE_ID,
@@ -14,6 +14,7 @@ import { IPetType, IUserPet, IPetItem } from "@/types";
 import { AppwriteException } from "node-appwrite";
 import Toast from "react-native-toast-message";
 import StyledButton from "./StyledButton";
+import Pet3DComponent from "./Pet3DComponent";
 
 const HappinessBar = ({ value }: { value: number }) => {
   const width = Math.max(0, Math.min(100, value));
@@ -102,21 +103,13 @@ export default function PetComponent() {
     <View className="p-4 bg-white rounded-lg shadow-md items-center">
       <Text className="text-2xl font-bold mb-2">{userPet.nickname}</Text>
 
-      <View className="w-48 h-48 rounded-lg mb-4" style={styles.petContainer}>
-        <Image
-          source={{ uri: petType.baseImageUrl }}
-          style={styles.imageLayer}
-          resizeMode="contain"
+      <View className="w-48 h-48 rounded-lg mb-4">
+        <Pet3DComponent 
+          petType={petType.name.toLowerCase()}
+          color={petType.color || '#FF6B6B'}
+          isHappy={userPet.happiness > 70}
+          isEating={false}
         />
-
-        {equippedItems.map((item) => (
-          <Image
-            key={item.$id}
-            source={{ uri: item.imageUrl }}
-            style={styles.imageLayer}
-            resizeMode="contain"
-          />
-        ))}
       </View>
 
       <View className="w-full">
@@ -129,17 +122,4 @@ export default function PetComponent() {
   );
 }
 
-const styles = StyleSheet.create({
-  petContainer: {
-    position: "relative",
-    width: 192,
-    height: 192,
-  },
-  imageLayer: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-  },
-});
+const styles = StyleSheet.create({});

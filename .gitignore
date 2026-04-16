@@ -1,5 +1,57 @@
-```
+```gitignore
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Logs
+*.log
+
+# Environment variables
 .env
 .env.local
-node_modules/
+*.env.*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg-info/
+.eggs/
+
+# Compiled JavaScript
+*.js.map
+*.ts.map
+
+# Temporary files
+*.tmp
+*.temp
+```
+
+Wait, let me reconsider the modified files. They are only source code files (.css, .tsx) with no build artifacts or dependencies in the changes. Following rule #6:
+
+```gitignore
+
 ```

@@ -14,6 +14,8 @@ export interface IUser extends Models.Document {
 export interface IPetType extends Models.Document {
   name: string;
   baseImageUrl: string;
+  color?: string;
+  model3DUrl?: string;
 }
 
 export interface IUserPet extends Models.Document {

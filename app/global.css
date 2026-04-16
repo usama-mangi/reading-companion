@@ -4,42 +4,79 @@
 
 @layer utilities {
   .safe-area-container {
-    @apply bg-gray-100 -mt-12 p-4 flex-1;
+    @apply bg-gradient-to-br from-blue-50 to-indigo-100 -mt-12 p-4 flex-1;
   }
   .auth-container {
-    @apply bg-white;
+    @apply bg-white rounded-2xl shadow-xl p-8;
   }
   .auth-title {
-    @apply text-3xl font-bold mb-12 text-center;
+    @apply text-4xl font-extrabold mb-8 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent;
   }
   .auth-input {
-    @apply border border-gray-300 rounded-lg mb-4 px-3 text-lg text-gray-800;
+    @apply border-2 border-gray-200 rounded-xl mb-4 px-4 py-3 text-lg text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200;
   }
   .auth-btn-container {
-    @apply bg-blue-500 rounded-lg py-2;
+    @apply bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl py-3 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
   }
   .auth-btn-text {
     @apply text-lg text-center text-white font-bold;
   }
 
   .btn-container {
-    @apply bg-blue-500 rounded-lg px-4 py-2 disabled:bg-gray-700 flex-1 min-h-12 max-h-12;
+    @apply bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl px-6 py-3 disabled:from-gray-400 disabled:to-gray-500 flex-1 min-h-12 max-h-12 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
   }
   .btn-text {
-    @apply text-lg text-center text-white font-bold disabled:text-gray-200 flex-1;
+    @apply text-lg text-center text-white font-bold disabled:text-gray-300 flex-1;
+  }
+  .btn-secondary {
+    @apply bg-white border-2 border-blue-600 rounded-xl px-6 py-3 flex-1 min-h-12 max-h-12 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
+  }
+  .btn-secondary-text {
+    @apply text-lg text-center text-blue-600 font-bold flex-1;
   }
 
   .input-label {
-    @apply text-lg font-semibold mb-2;
+    @apply text-lg font-bold mb-2 text-gray-700;
   }
   .input {
-    @apply bg-white p-3 rounded-lg border border-gray-300 mb-4 text-base text-gray-800 placeholder:text-gray-500;
+    @apply bg-white p-4 rounded-xl border-2 border-gray-200 mb-4 text-base text-gray-800 placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200;
   }
 
   .log-out-btn-container {
-    @apply bg-red-500 py-3 px-4 rounded-lg shadow-md mt-12;
+    @apply bg-gradient-to-r from-red-500 to-rose-600 py-4 px-6 rounded-xl shadow-lg mt-8 transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
   }
   .log-out-btn-text {
     @apply text-white font-bold text-center text-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-md p-4 transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
+  }
+  .card-title {
+    @apply text-xl font-bold text-gray-800;
+  }
+  .stat-card {
+    @apply bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg p-6 flex-1 min-w-[140px];
+  }
+  .stat-label {
+    @apply text-white text-sm font-medium opacity-90;
+  }
+  .stat-value {
+    @apply text-white text-3xl font-extrabold mt-1;
+  }
+  .screen-header {
+    @apply text-3xl font-extrabold text-gray-800 mb-6;
+  }
+  .empty-state {
+    @apply flex-col items-center justify-center py-16 px-8;
+  }
+  .empty-state-icon {
+    @apply text-6xl mb-4;
+  }
+  .empty-state-text {
+    @apply text-lg text-gray-500 text-center mb-2;
+  }
+  .empty-state-subtext {
+    @apply text-gray-400 text-center;
   }
 }
